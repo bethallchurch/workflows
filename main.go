@@ -28,7 +28,7 @@ func main() {
 
 	fmt.Printf("[w3w] Success getting API response: %s", body)
 
-	file, err := os.Create("w3wAutoSuggestions.json")
+	file, err := os.Create("./pages/data/w3wAutoSuggestions.json")
 	if err != nil {
 		fmt.Printf("[w3w] Error creating file: %s", err)
 	}

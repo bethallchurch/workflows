@@ -8,8 +8,8 @@
 - [x] handle env variable
 - [x] write response out to file
 - [x] upload response as artifact
-- [] deploy github page
-- [] dump response on github page
+- [x] deploy github page
+- [x] dump response on github page
 
 ## next
 

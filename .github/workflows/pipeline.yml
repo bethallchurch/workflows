@@ -35,7 +35,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: w3w-api-response
-        path: w3wAutoSuggestions.json
+        path: ./pages/data/w3wAutoSuggestions.json
 
     - name: Set up Pages
       uses: actions/configure-pages@v5
