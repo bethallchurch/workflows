@@ -1,10 +1,6 @@
 name: Go
 
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+on: workflow_dispatch
 
 jobs:
 
@@ -18,6 +14,5 @@ jobs:
       with:
         go-version: '1.25'
 
-    - name: Run
+    - name: Run Go
       run: go run -v ./...
-      
