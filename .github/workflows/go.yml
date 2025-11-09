@@ -18,3 +18,9 @@ jobs:
       run: go run -v ./...
       env:
         W3W_API_KEY: ${{ secrets.W3W_API_KEY }}
+
+    - name: Archive API response
+      uses: actions/upload-artifact@v4
+      with:
+        name: w3w-api-response
+        path: w3wAutoSuggestions.json
