@@ -1,7 +1,4 @@
-(async () => {
-    const response = await fetch('../data/w3wAutoSuggestions.json');
-    const data = await response.json();
+import data from '../data/w3wAutoSuggestions.json' with { type: 'json' };
 
-    const el = document.querySelector('.data');
-    el.innerHTML = JSON.stringify(data, null, 4);
-})();
+const el = document.querySelector('.data');
+el.innerHTML = JSON.stringify(data, null, 4);
