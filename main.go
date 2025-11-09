@@ -26,18 +26,5 @@ func main() {
 		fmt.Printf("[w3w] Error reading response body: %s", err)
 	}
 
-	fmt.Printf("[w3w] Success getting API response: %s", body)
-
-	file, err := os.Create("./pages/data/w3wAutoSuggestions.json")
-	if err != nil {
-		fmt.Printf("[w3w] Error creating file: %s", err)
-	}
-	defer file.Close()
-
-	_, err = file.WriteString(string(body))
-	if err != nil {
-		fmt.Printf("[w3w] Error writing to file: %s", err)
-	}
-
-	fmt.Println("[w3w] Success writing to file")
+	fmt.Printf("%s", body)
 }
