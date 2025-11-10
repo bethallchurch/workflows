@@ -1,4 +1,4 @@
-module bethallchurch/workflows
+module github.com/bethallchurch/workflows/scripts
 
 go 1.25.1
 

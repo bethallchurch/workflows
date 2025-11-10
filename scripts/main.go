@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"io"
+	"log"
 	"net/http"
 	"os"
 
@@ -10,20 +11,26 @@ import (
 )
 
 func main() {
-	godotenv.Load()
+	godotenv.Load("../.env")
 
 	apiKey := os.Getenv("W3W_API_KEY")
 	apiUrl := "https://api.what3words.com/v3/autosuggest?input=film.crunchy.spiri&key=" + apiKey
 
+	fmt.Println("API KEY: ", apiKey)
+
 	resp, err := http.Get(apiUrl)
 	if err != nil {
-		fmt.Printf("[w3w] Error connecting to API: %s", err)
+		log.Fatal("[w3w] Error connecting to API: ", err)
 	}
 	defer resp.Body.Close()
 
+	if resp.StatusCode > 299 {
+		log.Fatal("[w3w] Error retrieving data from API: ", resp.StatusCode)
+	}
+
 	body, err := io.ReadAll(resp.Body)
 	if err != nil {
-		fmt.Printf("[w3w] Error reading response body: %s", err)
+		log.Fatal("[w3w] Error reading response body: ", err)
 	}
 
 	fmt.Printf("%s", body)
